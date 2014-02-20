@@ -145,11 +145,11 @@ Now we can open the User model again at 'app/models/user.rb' and just before the
 
 To be able to see posts on a User's page, let's add the following to the bottom of the file 'app/views/users/show.html.erb' in our text editor:
 
-  <div class="post">
-    <% @user.posts.each do |post| %>
-      <div><%= post.body %></div>
-    <% end -%>
-  </div>
+  <% @user.posts.each do |post| %>
+    <div class="post">
+      <p><%= post.body %></p>
+    </div>
+  <% end -%>
 
 What this does is say "take each of a user's posts, and show the body of the post". When we view a user's page on the server, even if we did everything right, it nothing has changed because we haven't made any posts yet.
 
