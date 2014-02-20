@@ -2,5 +2,5 @@ For Debian-backed distributions. Will work flawlessly in Unbuntu, Linux Mint and
 
 Otherwise, simply open a terminal and enter the following command to get started!
 
-  bash < <(curl -s https://raw.github.com/codeparkhouston/rails-girls-houston-install/debian_install_script.sh)
+  bash < <(curl -s https://raw.github.com/codeparkhouston/rails-girls-houston-install/master/debian_install_script.sh)
 
