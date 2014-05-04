@@ -20,7 +20,18 @@ Finally, we change directory (again `cd`) into the project itself:
 
     cd rails-girls-houston
 
-Now if run `ls`, you should see a bunch of folders with names like `app`, `config` and many more. To start the server for the first time, run:
+Now if you run the `ls` command, you should see a bunch of folders with names like `app`, `config` and many more. The first action we take is to install some libraries. A library, in programming, just means "useful helper program". Once upon a time, finding and installing libraries could be a lot of work, but Rails makes this easy. All we do is use the command:
+
+    bundle install
+
+This may take a while, and you will see a list of all the tools that are being installed. Eventually, you should see the last two lines:
+
+    Your bundle is complete!
+    Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+This means all of the libraries installed successfully. Now our app can start building web pages!
+
+To start the server for the first time, run:
 
     rails server
     [windows] bundle exec rails server
@@ -67,11 +78,13 @@ Once you've seen the title changing a bit, hit `CTRL-C` in the terminal with the
 We're going to make users now. Our users will be simple: A name and an email. Rails has a helpful tool called a "generator" that can make a "model" for us which represents a user and assists in keeping users around in a database. To use this model generator, run:
 
     rails generate model User name email
+    [windows] bundle exec rails generate model User name email
 
 This command should say that it has made a whole bunch of files for you. We'll look at those in a moment, but first we need to run some commands to update the database and restart the server:
 
     rake db:migrate
     rails server
+    [windows] bundle exec rake db:migrate
     [windows] bundle exec rails server
 
 When you load [http://localhost:3000/](http://localhost:3000/) again and click the "List All Users" link the navigation bar at the top, you will see a page saying it is "Listing All Users" but has nothing else. This makes sense: We have not made any users yet. There is also a "Make New User" link. Click it.
@@ -115,6 +128,7 @@ Now you can play around, make users, and see them on the "List All Users" page.
 We want users to be able to have mini-posts. As with users, we first want a model which represents a Post. Rails can once again help us out with the same generator as before:
 
     rails generate model Post body:text user:references
+    [windows] bundle exec rails generate model Post body:text user:references
 
 Note that unlike last time, we have a colon followed by another word within the command. This tells Rails we want something special with that attribute of a post. For instance, we want the body of the post to be a special kind of long text, so we say `:text`, and we want a single Post to be owned by a particular User so we say that the post `:references` a User.
 
@@ -123,6 +137,7 @@ Just like when we made the User model we need to run two commands after generati
     rake db:migrate
     rails server
     [windows] bundle exec rails server
+    [windows] bundle exec rake db:migrate
 
 If you open update the model file `app/models/post.rb` you will see the details of the Post model. Interestingly, you see the line
 
