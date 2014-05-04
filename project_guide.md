@@ -14,11 +14,11 @@ Then, we will change directory (aka `cd`) into the new `projects` directory:
 
 And to get the code from the internet, we ask the `git` program to `clone` it from Code Park:
 
-    git clone https://github.com/codeparkhouston/rails-girls-houston.git
+    git clone https://github.com/codeparkhouston/rails-girls-miniposts.git
 
 Finally, we change directory (again `cd`) into the project itself:
 
-    cd rails-girls-houston
+    cd rails-girls-miniposts
 
 Now if you run the `ls` command, you should see a bunch of folders with names like `app`, `config` and many more. The first action we take is to install some libraries. A library, in programming, just means "useful helper program". Once upon a time, finding and installing libraries could be a lot of work, but Rails makes this easy. All we do is use the command:
 
@@ -51,7 +51,7 @@ In order for our server to know how which page to show for each web address, we 
 
 Open `config/routes.rb` and you should see
 
-    Railsgirlshouston::Application.routes.draw do
+    Railsgirlsminiposts::Application.routes.draw do
       resources :users, :posts
 
     end
